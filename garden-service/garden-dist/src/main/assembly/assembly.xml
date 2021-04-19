@@ -1,0 +1,57 @@
+<assembly>
+    <id>release</id>
+    <formats>
+        <format>tar</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+
+    <!-- run script -->
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/../</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/cloud-zuul</directory>
+            <outputDirectory>/garden-zuul-${project.version}/bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/cloud-auth</directory>
+            <outputDirectory>/garden-auth-${project.version}/bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+
+    </fileSets>
+
+    <!-- jar config -->
+    <!--<files>-->
+        <!--<file>-->
+            <!--<source>../garden-zuul/target/cloud-zuul-${project.version}.jar</source>-->
+            <!--<outputDirectory>/cloud-zuul-${project.version}/lib/</outputDirectory>-->
+            <!--<destName>cloud-zuul-${project.version}.jar</destName>-->
+        <!--</file>-->
+        <!--<file>-->
+            <!--<source>../garden-auth/target/cloud-auth-${project.version}.jar</source>-->
+            <!--<outputDirectory>/cloud-auth-${project.version}/lib/</outputDirectory>-->
+            <!--<destName>cloud-auth-${project.version}.jar</destName>-->
+        <!--</file>-->
+    <!--</files>-->
+
+</assembly>
